@@ -4,8 +4,5 @@
   "jwt_key": "2jfan3jalp",
   "verify_key": "afjdha23",
   "refresh_key": "jfdajf34",
-  "reset_key": "afjfaj34232",
-  "GOOGLE_CLIENT_ID": "xxxxxxxx",
-  "GOOGLE_CLIENT_SECRET": "xxxxxxxx",
-  "GOOGLE_CALLBACK": "http://localhost:8000/api/auth/google/callback"
+  "reset_key": "afjfaj34232"
 }
