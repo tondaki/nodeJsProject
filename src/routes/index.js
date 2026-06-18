@@ -1,0 +1,15 @@
+const express = require("express");
+const router = express.Router();
+const authRouter = require("./auth");
+const taskRouter = require("./task");
+const error = require("../middleware/error");
+const admin = require("../routes/admin");
+const uploads = require("../routes/upload");
+// const { IsLoggin } = require("../middleware/auth");
+router.use("/auth", authRouter);
+router.use("/task", taskRouter);
+router.use("/admin", admin);
+router.use("/upload", uploads);
+router.use(error);
+//router.use("/auth", IsLoggin, authRouter);
+module.exports = router;

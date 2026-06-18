@@ -1,0 +1,42 @@
+service:
+  app:
+    build: .
+    container_name: task-api
+    restart: unless-stopped
+  ports:
+    - "8000:8000"
+  environment:
+    MONGO_URL: mongodb://mongo:27017/taskdb
+    REDIS_HOST: redis
+    REDIS_PORT: 6379
+    JWT_KEY: 2jfan3jalp
+    REFRESH_KEY: jfdajf34
+
+  depends_on:
+    - mongo
+    - redis
+
+  volumes:
+    - .:/app
+    - /app/node_moudles
+  mongo:
+    image: mongo:8
+    contaniner_name: mongodb
+
+    restart: unless-stopped
+
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+volumes:
+  mongo-data:
+  redis-data:
