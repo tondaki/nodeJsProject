@@ -7,7 +7,7 @@ require("./startup/db")();
 require("./startup/security")(app);
 require("./startup/config")(express, app);
 require("./startup/logging")();
-require("./startup/redis")();
+require("./startup/redis");
 
 const passport = require("./startup/passport");
 const session = require("express-session");
